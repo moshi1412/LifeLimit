@@ -6,6 +6,7 @@ using System;
 
 public class InteractiveObj : MonoBehaviour
 {
+   // public GameObject fobobj;
     public enum Pollution
     {
         clean = 0,
@@ -61,6 +62,7 @@ public class InteractiveObj : MonoBehaviour
         //ppartical = PollutionController.instance.ppartical;
         //cpartical.type = types;
         //ppartical.isClean = false;
+        //fogobj = Resources.Load<GameObject>("Fog");
         originPol = pollution;
         rend = GetComponent<Renderer>();
         normal = PollutionController.instance.Tolerance[(int)types];
@@ -114,7 +116,13 @@ public class InteractiveObj : MonoBehaviour
             types = Types.clean;
             if (pollution != originPol)
             {
+                //Debug.Log("destroy");
+                GameObject fogobj=Resources.Load<GameObject>("fog");
+                GameObject fog_clone=Instantiate(fogobj, transform.position+new Vector3(0.5f,0.5f,0), transform.rotation);
+                fog_clone.GetComponent<ParticleSystem>().Play();
                 MaterialsChange(PollutionController.instance.cleanM);
+                // fog_clone.GetComponent<ParticleSystem>().Stop();
+                // Destroy(fog_clone);
             }
         }
     }
