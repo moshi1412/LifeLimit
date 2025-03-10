@@ -342,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &159563634
 PrefabInstance:
@@ -1100,6 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &418904387
 PrefabInstance:
@@ -1543,6 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &505527402
 PrefabInstance:
@@ -2078,6 +2081,18 @@ PrefabInstance:
       propertyPath: fontsize
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: -1883271388899002512, guid: d03016fe487abda49baedc1040f5be16, type: 3}
+      propertyPath: LightMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fa427299d6fd9cf4fb1c7351c793bb9e, type: 2}
+    - target: {fileID: 5123975254428213874, guid: d03016fe487abda49baedc1040f5be16, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123975254428213874, guid: d03016fe487abda49baedc1040f5be16, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1857f20630a8d154ca3ece6fb77a91e7, type: 2}
     - target: {fileID: 6293543552245438749, guid: d03016fe487abda49baedc1040f5be16, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2740,6 +2755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &786835988
 PrefabInstance:
@@ -3136,6 +3152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1 &899962101 stripped
 GameObject:
@@ -3154,6 +3171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &914826467
 PrefabInstance:
@@ -3409,6 +3427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1 &979680284 stripped
 GameObject:
@@ -3427,6 +3446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &1024543842
 PrefabInstance:
@@ -3439,6 +3459,22 @@ PrefabInstance:
       propertyPath: fontsize
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7068545674992954099, guid: bc7f640cbb4b62c46a4473a75fbc8730, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068545674992954099, guid: bc7f640cbb4b62c46a4473a75fbc8730, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068545674992954099, guid: bc7f640cbb4b62c46a4473a75fbc8730, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd065e9f68fd29b4caf5dee76d7c301e, type: 2}
+    - target: {fileID: 7068545674992954099, guid: bc7f640cbb4b62c46a4473a75fbc8730, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: -2505642851634945670, guid: 6e37c4c59694e94478569b3d0386dad7, type: 3}
     - target: {fileID: 8238112911148175772, guid: bc7f640cbb4b62c46a4473a75fbc8730, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3483,6 +3519,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8491837774749939315, guid: bc7f640cbb4b62c46a4473a75fbc8730, type: 3}
+      propertyPath: linemat
+      value: 
+      objectReference: {fileID: 2100000, guid: bd065e9f68fd29b4caf5dee76d7c301e, type: 2}
+    - target: {fileID: 8491837774749939315, guid: bc7f640cbb4b62c46a4473a75fbc8730, type: 3}
+      propertyPath: lightmat
+      value: 
+      objectReference: {fileID: 2100000, guid: fa427299d6fd9cf4fb1c7351c793bb9e, type: 2}
     - target: {fileID: 8725856936722664230, guid: bc7f640cbb4b62c46a4473a75fbc8730, type: 3}
       propertyPath: m_Name
       value: T_Plain_D (4)
@@ -3511,6 +3555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &1061664503
 PrefabInstance:
@@ -3693,9 +3738,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d82cd76cb7bae040b18f47797b70e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cleanM: {fileID: 2100000, guid: b4af0661c7d4dd4458640d524b734405, type: 2}
-  mildPM: {fileID: -4770390735465466038, guid: 5a162b2f95b563e458b830d84b2881da, type: 3}
-  heavyPM: {fileID: 7575915981058242857, guid: 045a0eefcf706b94aa4f1d2b7284f69a, type: 3}
+  cleanM: {fileID: 3427735138278241775, guid: 875fa7b12c3fc9f479ad3d68e3a1c9c1, type: 3}
+  mildPM: {fileID: 7804035116936802833, guid: 28581d8ddf04d8c44bb7410423dbd49a, type: 3}
+  heavyPM: {fileID: 6637452804618863527, guid: d03016fe487abda49baedc1040f5be16, type: 3}
   BG: {fileID: 0}
   clean: {fileID: 839428803926234622, guid: cc7a09c1be267e14093cc745f4bd3e9b, type: 3}
   lowPollution: {fileID: 2759778244580198974, guid: 77f65d3637c55604a82359240d00803a, type: 3}
@@ -4086,6 +4131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &1169345871
 PrefabInstance:
@@ -5244,6 +5290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &1708523503
 PrefabInstance:
@@ -5604,6 +5651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &1843584801
 PrefabInstance:
@@ -6097,6 +6145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &1986549882
 PrefabInstance:
@@ -6368,6 +6417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 50
 --- !u!1001 &8402718613623897127
 PrefabInstance:

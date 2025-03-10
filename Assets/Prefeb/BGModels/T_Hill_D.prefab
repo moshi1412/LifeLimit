@@ -105,6 +105,8 @@ MonoBehaviour:
   pollutionDegree: 0
   cpartical: {fileID: 6437473235637894122, guid: 5786cc05dd663134a9224c55a85ab72b, type: 3}
   ppartical: {fileID: 3252755932069055668, guid: 0e7a44e8c6a2806438af657c17271b1a, type: 3}
+  linemat: {fileID: 2100000, guid: bd065e9f68fd29b4caf5dee76d7c301e, type: 2}
+  lightmat: {fileID: 2100000, guid: fa427299d6fd9cf4fb1c7351c793bb9e, type: 2}
 --- !u!61 &2984908426996748183
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 0}
   fontsize: 100
 --- !u!1001 &3974187425736651536
 PrefabInstance:

@@ -5,12 +5,14 @@ using UnityEngine.EventSystems;
 
 public class Obj : MonoBehaviour
 {
+    public Material LightMaterial;
     bool isShowTip;
     public int fontsize = 30;
     InteractiveObj ict;
     string[] terrain = { "平原", "草地", "丘陵", "山地", "林地", "低级居民区", "中级居民区", "高级居民区", "低级沙漠地带", "高级沙漠地带", "禁区" };
     float[] normal = { 1, 2, 3, 5, 4, 3, 4, 5 };
     int oriDegree;
+    Renderer render;
 
     [Multiline]
     string text;
@@ -19,6 +21,7 @@ public class Obj : MonoBehaviour
     {
         ict = GetComponent<InteractiveObj>();
         oriDegree = PollutionController.instance.Tolerance[(int)ict.types];
+        render=GetComponent<Renderer>();
     }
     private void Update()
     {
@@ -37,16 +40,21 @@ public class Obj : MonoBehaviour
     }
     void OnMouseEnter()
     {
+        // Debug.Log("enter");
         isShowTip = true;
+        
     }
     void OnMouseExit()
     {
+        
         isShowTip = false;
+        
     }
     void OnGUI()
     {
         if (isShowTip)
         {
+            // Debug.Log("show");
             GUIStyle style1 = new GUIStyle();
             style1.fontSize = fontsize;
             style1.normal.textColor = Color.white;

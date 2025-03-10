@@ -6,9 +6,9 @@ public class PollutionController : MonoBehaviour
 {
     public static PollutionController instance { get; private set; }
 
-    public Material cleanM;
-    public Material mildPM;
-    public Material heavyPM;
+    public GameObject cleanM;
+    public GameObject mildPM;
+    public GameObject heavyPM;
 
 
     public GameObject BG;

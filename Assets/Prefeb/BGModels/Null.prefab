@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1981605418223446941}
   - component: {fileID: 1540177598830497227}
   - component: {fileID: 1591846682732331431}
+  - component: {fileID: 1024937428790212310}
   m_Layer: 0
   m_Name: Null
   m_TagString: Untagged
@@ -148,3 +149,19 @@ MonoBehaviour:
   pollutionDegree: 0
   cpartical: {fileID: 0}
   ppartical: {fileID: 0}
+  linemat: {fileID: 0}
+  lightmat: {fileID: 0}
+--- !u!114 &1024937428790212310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427735138278241775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2031f3fbbb76b744b78b5237b08fc43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 2100000, guid: fa427299d6fd9cf4fb1c7351c793bb9e, type: 2}
+  fontsize: 30

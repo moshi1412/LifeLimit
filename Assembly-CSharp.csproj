@@ -41,7 +41,6 @@
      <Compile Include="Assets\Scripts\TurnsController.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
      <Compile Include="Assets\Scripts\Obj.cs" />
-     <Compile Include="Assets\Scripts\fog.cs" />
      <Compile Include="Assets\Scripts\EndClass.cs" />
      <Compile Include="Assets\Scripts\PollutionController.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
@@ -61,6 +60,7 @@
      <None Include="Assets\KayKit_City_Builder_Bits_1.0_FREE\KayKit_City_Builder_Bits_1.0_FREE\License.txt" />
      <None Include="Assets\Textures\cubeshader.shader" />
      <None Include="Assets\DOTween\readme.txt" />
+     <None Include="Assets\KayKit_HalloweenBits_1.0_FREE\KayKit_HalloweenBits_1.0_FREE\License.txt" />
      <None Include="Assets\Textures\材質球\003宝可梦\cokey_Vfx_2.3(1).shader" />
      <None Include="Assets\KayKit Medieval Builder Pack 1.0\License.txt" />
     <Reference Include="UnityEngine">
@@ -289,10 +289,10 @@
         <HintPath>D:\unity\hub\2020.3.21f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Assets\DOTween\DOTween.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Assets\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>D:\unity\hub\2020.3.21f1c1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -640,103 +640,103 @@
         <HintPath>D:\unity\hub\2020.3.21f1c1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.quicksearch">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\com.unity.quicksearch.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\com.unity.quicksearch.dll</HintPath>
     </Reference>
     <Reference Include="PsdPlugin">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.IK.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
-        <HintPath>C:\Users\鲁\Desktop\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+        <HintPath>C:\Users\鲁\Desktop\LifeLimit - 副本\LifeLimit\LifeLimit\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
