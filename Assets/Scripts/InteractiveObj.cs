@@ -110,11 +110,11 @@ public class InteractiveObj : MonoBehaviour
             {
                 if (obj.GetComponent<InteractiveObj>().types == types)
                 {
-                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z + 0.1f);
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z + 0.2f);
                     obj.GetComponent<MeshRenderer>().material = linemat;
                 }
             }
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.2f);
             rend.material = linemat;
             Color co = GetComponent<MeshRenderer>().material.color;
             co.a = 255f / 255f;
@@ -320,11 +320,11 @@ public class InteractiveObj : MonoBehaviour
                     {
                         if (obj.GetComponent<InteractiveObj>().types == types)
                 {
-                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z - 0.1f);
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z - 0.2f);
                     obj.GetComponent<MeshRenderer>().material = lightmat;
                 }
                     }
-                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.1f);
+                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.2f);
                     rend.material = lightmat;
                     Color co = GetComponent<MeshRenderer>().material.color;
                     co.a = 255f / 255f;
@@ -361,11 +361,11 @@ public class InteractiveObj : MonoBehaviour
                 {
                     if (obj.GetComponent<InteractiveObj>().types == types)
                 {
-                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z + 0.1f);
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z + 0.2f);
                     obj.GetComponent<MeshRenderer>().material = linemat;
                 }
                 }
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f);
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.2f);
                 ischosen = false;
                 rend.material = linemat;
                 Color co = GetComponent<MeshRenderer>().material.color;
@@ -395,6 +395,21 @@ public class InteractiveObj : MonoBehaviour
     IEnumerator MatFade(GameObject material)
     {
         Debug.Log(transform.position);
+        Color co1 =rend.materials[1].color;
+        // co1.a = 255f / 255f;
+        rend.materials[1].DOFade(0, PollutionController.instance.time);
+        yield return new WaitForSeconds(PollutionController.instance.time);
+        Debug.Log(rend.materials[1].name);
+        foreach (Transform item in transform)
+        {
+            Destroy(item.gameObject);
+        }      
+        
+        // obj.transform.parent = transform;
+        // yield return new WaitForSeconds(PollutionController.instance.time);
+        // rend.material.DOFade(0, PollutionController.instance.time);
+
+        // yield return new WaitForSeconds(PollutionController.instance.time);
         GameObject obj = Instantiate(material, transform.position, new Quaternion(1, 0, 0, 0));
 
         // obj.GetComponent<InteractiveObj>().pollutingTime = pollutingTime;
@@ -408,16 +423,6 @@ public class InteractiveObj : MonoBehaviour
         Material mat = obj.GetComponent<Renderer>().material;
         mat.color = co;
         mat.DOFade(1, PollutionController.instance.time);
-        yield return new WaitForSeconds(PollutionController.instance.time);
-        // obj.transform.parent = transform;
-        // yield return new WaitForSeconds(PollutionController.instance.time);
-        // rend.material.DOFade(0, PollutionController.instance.time);
-
-        // yield return new WaitForSeconds(PollutionController.instance.time);
-        foreach (Transform item in transform)
-        {
-            Destroy(item.gameObject);
-        }
         Destroy(this.gameObject);
     }
 

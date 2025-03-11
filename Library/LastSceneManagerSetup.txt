@@ -7,15 +7,7 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/Class03.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
 - path: Assets/Scenes/Class04.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/Class05.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
@@ -24,12 +16,12 @@ sceneSetups:
   isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/Class07.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
-- path: Assets/Scenes/Class08.unity
   isLoaded: 0
   isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Class08.unity
+  isLoaded: 1
+  isActive: 1
   isSubScene: 0
 - path: Assets/Scenes/ClassTest.unity
   isLoaded: 0
