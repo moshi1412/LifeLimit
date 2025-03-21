@@ -63,6 +63,8 @@ public class TurnsController : MonoBehaviour
             if (houseTag.Length == 0)
             {
                 Debug.Log("游戏失败");
+                GetComponent<AudioSource>().clip=Resources.Load<AudioClip>("effect/lose");
+                GetComponent<AudioSource>().Play();
                 Fail.SetActive(true);
                 endTurn = false;
                 PollutionController.times = 1;
@@ -73,6 +75,8 @@ public class TurnsController : MonoBehaviour
             yield return null;
         }
         Debug.Log("游戏胜利");
+        GetComponent<AudioSource>().clip=Resources.Load<AudioClip>("effect/victory");
+        GetComponent<AudioSource>().Play();
         Vectory.SetActive(true);
         canCleanse = true;
         PollutionController.times = 1;

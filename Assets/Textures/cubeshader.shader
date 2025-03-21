@@ -2,8 +2,8 @@ Shader "Vitens/CubeOutline"
 {
     Properties
     {
-		_Color("Color", color) = (0,0,0,1)
-		_Width("Width", range(0,0.5)) = 0.006
+		_Color("Color", color) = (1,1,1,1)
+		_Width("Width", range(0,0.5)) = 0.1
     }
     SubShader
     {
@@ -11,8 +11,8 @@ Shader "Vitens/CubeOutline"
 		Pass {
 
   //如果要显示背面的线框，取消下面两个注释即可
-			cull off
-			ZWrite off
+			//cull off
+			//ZWrite off
 			blend srcalpha oneminussrcalpha
 			CGPROGRAM
 

@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ClassTest.unity
     guid: c988904f431fbac4dbe254b69ff046d1
+  - enabled: 1
+    path: Assets/Scenes/chooseclass.unity
+    guid: a19f77db144ce1245b7d6a1830d0f644
   m_configObjects: {}

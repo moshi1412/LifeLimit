@@ -1,9 +1,13 @@
 sceneSetups:
 - path: Assets/Scenes/Start.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
+- path: Assets/Scenes/Class02.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/Class02.unity
+- path: Assets/Scenes/chooseclass.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
@@ -20,8 +24,8 @@ sceneSetups:
   isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/Class08.unity
-  isLoaded: 1
-  isActive: 1
+  isLoaded: 0
+  isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/ClassTest.unity
   isLoaded: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using UnityEngine.UI;
 
 public class InteractiveObj : MonoBehaviour
 {
@@ -57,6 +58,7 @@ public class InteractiveObj : MonoBehaviour
     public Material linemat;
     public Material lightmat;
     static bool isprocessed = false;
+    static bool isprocessing = false;
     [NonSerialized]
     public int isPolluting;
     //private bool isfirst = true;
@@ -64,7 +66,8 @@ public class InteractiveObj : MonoBehaviour
     Vector2[] der = new Vector2[] { new Vector2(-1, -1), new Vector2(-1, 1), new Vector2(-1, 0), new Vector2(1, -1), new Vector2(1, 1), new Vector2(1, 0), new Vector2(0, 1), new Vector2(-1, -1), new Vector2(0, -1) };
     public List<GameObject> adjacent = new List<GameObject>();
     Renderer rend;
-
+    MeshRenderer cuberend;
+    GameObject txt;
     private void Start()
     {
         //cpartical = PollutionController.instance.cpartical;
@@ -76,58 +79,135 @@ public class InteractiveObj : MonoBehaviour
         // {
         //     adjacent[i] = null;
         // }
+        txt = transform.Find("Canvas/Text").gameObject;
+        // txt.GetComponent<Text>().font=Resources.Load<Font>("numberfont");
+        // txt.GetComponent<Text>().material =Resources.Load<Material>("Font Material");
+        txt.GetComponent<Text>().fontSize = 40;
+        txt.SetActive(false);
         originPol = pollution;
         rend = GetComponent<Renderer>();
+        cuberend = transform.GetChild(0).GetComponent<MeshRenderer>();
         normal = PollutionController.instance.Tolerance[(int)types];
         heavy = normal + 5;
     }
     private void Update()
     {
+        //    if(adjacent.Count!=0)
+
+        // Debug.Log("ispro:"+isprocessing);
         // if(!isfirst&&Input.GetMouseButtonDown(0)&&!isEnter)//如果点过一次并且这次点击是在方格外面点的，就让它下去（做成动画也可）
         // {    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f);return;}
         if (isPause && ischosen)
         {
-            if (adjacent == null)
-            {
-                InteractiveObj[] objects = transform.parent.GetComponentsInChildren<InteractiveObj>();
+            // if (adjacent == null)
+            // {
+            //     InteractiveObj[] objects = transform.parent.GetComponentsInChildren<InteractiveObj>();
 
-                foreach (InteractiveObj obj in objects)
-                {
-                    foreach (Vector2 pos in derivative)
-                    {
-                        if (obj.transform.position == transform.position + (Vector3)pos)
-                        {
-                            adjacent.Add(obj.gameObject);
-                        }
-                    }
-                    if (adjacent.Capacity == 8)
-                    {
-                        break;
-                    }
-                }
-            }
+            //     foreach (InteractiveObj obj in objects)
+            //     {
+            //         foreach (Vector2 pos in derivative)
+            //         {
+            //             if (obj.transform.position == transform.position + (Vector3)pos)
+            //             {
+            //                 adjacent.Add(obj.gameObject);
+            //             }
+            //         }
+            //         if (adjacent.Capacity == 8)
+            //         {
+            //             break;
+            //         }
+            //     }
+            // }
             foreach (GameObject obj in adjacent)
             {
                 if (obj.GetComponent<InteractiveObj>().types == types)
                 {
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z + 0.2f);
-                    obj.GetComponent<MeshRenderer>().material = linemat;
+                    obj.transform.GetChild(0).GetComponent<MeshRenderer>().material = linemat;
                 }
             }
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.2f);
-            rend.material = linemat;
-            Color co = GetComponent<MeshRenderer>().material.color;
-            co.a = 255f / 255f;
-            rend.material.color = co;
+            cuberend.material = linemat;
+            // Color co = GetComponent<MeshRenderer>().material.color;
+            // co.a = 255f / 255f;
+            // rend.material.color = co;
             ischosen = false;
         }
         PollutionDegreeJudgement();
         PollutionJudgement();
         TagSet();
-
+        NumShow();
         CleanseTest();
+
+
+
     }
 
+    private void NumShow()
+    {
+        
+        if (!isPause && !isprocessing)
+        {
+            Debug.Log(isPause);
+            if ((int)types < GetComponent<Obj>().normal.Length)
+
+            {
+                txt.GetComponent<Text>().text = pollutionDegree.ToString();
+                if (pollutionDegree + 1 == GetComponent<Obj>().normal[(int)types])
+                {
+                    bool willbepolluted = false;
+                    Debug.Log("adjacent.Count");
+                    if (adjacent.Count == 0 || adjacent[0] == null)
+                    {
+
+                        // Debug.Log(transform.parent.childCount);
+
+                        for (int i = 0; i < transform.parent.childCount; i++)
+                        {
+                            foreach (Vector2 pos in der)
+                            {
+                                Vector3 newpos = transform.position + (Vector3)pos;
+
+                                if (transform.parent.GetChild(i).position.x == newpos.x && transform.parent.GetChild(i).position.y == newpos.y)
+                                {
+                                    adjacent.Add(transform.parent.GetChild(i).gameObject);
+                                }
+                            }
+                            if (adjacent.Count == 8)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                    // Debug.Log("12132");
+                    foreach (GameObject obj in adjacent)
+                    {
+                        if (obj.GetComponent<InteractiveObj>().types == Types.lowPollution || obj.GetComponent<InteractiveObj>().types == Types.highPollution)
+                        {
+
+                            willbepolluted = true;
+
+                        }
+                    }
+                    if (willbepolluted) txt.GetComponent<Text>().color = Color.red;
+
+
+                }
+            }
+            else if((int)types == GetComponent<Obj>().normal.Length)
+            {
+                txt.GetComponent<Text>().text =( pollutionDegree - GetComponent<Obj>().oriDegree).ToString();
+                if(pollutionDegree - GetComponent<Obj>().oriDegree==4)
+                {
+                    txt.GetComponent<Text>().color = Color.red;
+                }
+            }
+            else txt.GetComponent<Text>().color = Color.white;
+            txt.SetActive(true);
+        }
+        else txt.SetActive(false);
+        if (isprocessing) txt.SetActive(false);
+    }
     public void Polluting()//污染
     {
         if (pollution == Pollution.mild || pollution == Pollution.heavy)
@@ -159,6 +239,9 @@ public class InteractiveObj : MonoBehaviour
     {
         if (this.tag == "House")
         {
+            GetComponent<AudioSource>().clip= Resources.Load<AudioClip>("effect/clean");
+            GetComponent<AudioSource>().pitch=1.7f;
+            GetComponent<AudioSource>().Play();   
             pollutionDegree = 0;
         }
         else
@@ -169,6 +252,10 @@ public class InteractiveObj : MonoBehaviour
             if (pollution != originPol)
             {
                 //Debug.Log("destroy");
+                GetComponent<AudioSource>().clip= Resources.Load<AudioClip>("effect/destroy");
+                GetComponent<AudioSource>().pitch=1.7f;
+                GetComponent<AudioSource>().Play();
+                
                 GameObject fogobj = Resources.Load<GameObject>("fog");
                 GameObject fog_clone = Instantiate(fogobj, transform.position + new Vector3(0.5f, 0.5f, 0), transform.rotation);
                 fog_clone.GetComponent<ParticleSystem>().Play();
@@ -237,7 +324,9 @@ public class InteractiveObj : MonoBehaviour
             if (pollution != originPol && pollutingTime == 0)
             {
                 pollutingTime += 1;
-                MaterialsChange(PollutionController.instance.mildPM);
+                StartCoroutine("SandPro", 1.0f);
+                // StopCoroutine("SandPro");
+
 
             }
             pollution = Pollution.mild;
@@ -283,20 +372,24 @@ public class InteractiveObj : MonoBehaviour
     {
         if (TurnsController.canCleanse && canClean && Input.GetMouseButtonDown(0) && isEnter)
         {
-            Debug.Log(isPause);
+            // Debug.Log(isPause);
             if (isprocessed)
             {
                 //Debug.Log("isprocessed");
-                isPause = true; isprocessed = false;
+                isPause = true; isprocessed = false; isprocessing = false;
             }
             if (isPause)
             {
                 if (!ischosen)
                 {
                     Debug.Log("ischosen");
+                    GetComponent<AudioSource>().clip=Resources.Load<AudioClip>("effect/click_up");
+                    GetComponent<AudioSource>().pitch=1.5f;
+                    // Debug.Log("click_up");
+                    GetComponent<AudioSource>().Play();
                     isPause = false;
                     ischosen = true;
-                    if (adjacent.Count == 0)
+                    if (adjacent.Count == 0 || adjacent[0] == null)
                     {
                         Debug.Log(transform.parent.childCount);
 
@@ -319,16 +412,18 @@ public class InteractiveObj : MonoBehaviour
                     foreach (GameObject obj in adjacent)
                     {
                         if (obj.GetComponent<InteractiveObj>().types == types)
-                {
-                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z - 0.2f);
-                    obj.GetComponent<MeshRenderer>().material = lightmat;
-                }
+                        {
+                            obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z - 0.2f);
+                            obj.transform.GetChild(0).GetComponent<MeshRenderer>().material = lightmat;
+                        }
                     }
                     transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.2f);
-                    rend.material = lightmat;
-                    Color co = GetComponent<MeshRenderer>().material.color;
-                    co.a = 255f / 255f;
-                    rend.material.color = co;
+                    cuberend.material = lightmat;
+
+                    
+                    // Color co = GetComponent<MeshRenderer>().material.color;
+                    // co.a = 255f / 255f;
+                    // rend.material.color = co;
                     return;
 
                 }
@@ -338,6 +433,7 @@ public class InteractiveObj : MonoBehaviour
             {
 
                 if (!ischosen) { isPause = true; return; }
+                isprocessing = true;
                 if (adjacent == null)
                 {
                     InteractiveObj[] objects = transform.parent.GetComponentsInChildren<InteractiveObj>();
@@ -360,19 +456,21 @@ public class InteractiveObj : MonoBehaviour
                 foreach (GameObject obj in adjacent)
                 {
                     if (obj.GetComponent<InteractiveObj>().types == types)
-                {
-                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z + 0.2f);
-                    obj.GetComponent<MeshRenderer>().material = linemat;
-                }
+                    {
+                        obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z + 0.2f);
+                        obj.transform.GetChild(0).GetComponent<MeshRenderer>().material = linemat;
+                    }
                 }
                 transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.2f);
                 ischosen = false;
-                rend.material = linemat;
-                Color co = GetComponent<MeshRenderer>().material.color;
-                co.a = 255f / 255f;
-                rend.material.color = co;
+                cuberend.material = linemat;
+                txt.SetActive(false);
+                // Color co = GetComponent<MeshRenderer>().material.color;
+                // co.a = 255f / 255f;
+                // rend.material.color = co;
             }
             Debug.Log(1);
+
             //Debug.Log(types);
             Cleanse();
             TurnsController.canCleanse = false;
@@ -394,17 +492,18 @@ public class InteractiveObj : MonoBehaviour
 
     IEnumerator MatFade(GameObject material)
     {
-        Debug.Log(transform.position);
-        Color co1 =rend.materials[1].color;
+        // Debug.Log(transform.position);
+        yield return new WaitForSeconds(0.5f);
+        Color co1 = rend.material.color;
         // co1.a = 255f / 255f;
-        rend.materials[1].DOFade(0, PollutionController.instance.time);
+        rend.material.DOFade(0, PollutionController.instance.time);
         yield return new WaitForSeconds(PollutionController.instance.time);
-        Debug.Log(rend.materials[1].name);
+        // Debug.Log(rend.material.name);
         foreach (Transform item in transform)
         {
             Destroy(item.gameObject);
-        }      
-        
+        }
+
         // obj.transform.parent = transform;
         // yield return new WaitForSeconds(PollutionController.instance.time);
         // rend.material.DOFade(0, PollutionController.instance.time);
@@ -436,23 +535,24 @@ public class InteractiveObj : MonoBehaviour
         //         return;
         //     }
 
-        //需要获取一下同一个组的块？
 
         //Debug.Log(types);
         if (isPause) return;
         //isPause=true;
-        Debug.Log("trigger");
-        Debug.Log(collision.gameObject.GetComponent<PCpartical>().isClean + "and" + canPolluting);
+        // Debug.Log("trigger");
+        // Debug.Log(collision.gameObject.GetComponent<PCpartical>().isClean + "and" + canPolluting);
         if (collision.gameObject.GetComponent<PCpartical>().isClean == false && canPolluting)
         {
             Debug.Log("polluted");
             GetPollution();
+            // isprocessing=false;
             isprocessed = true;
         }
         else if (collision.gameObject.GetComponent<PCpartical>().type == this.types && canClean)
         {
             GetClense();
             isprocessed = true;
+            // isprocessing=false;
             Destroy(collision.gameObject);
         }
         // isfirst = true;
@@ -470,5 +570,20 @@ public class InteractiveObj : MonoBehaviour
         //Debug.Log("exit");
         isEnter = false;
     }
-
+    IEnumerator SandPro()
+    {
+        // Debug.Log("SandAnim");
+        
+        yield return new WaitForSeconds(1);
+        GetComponent<AudioSource>().clip= Resources.Load<AudioClip>("effect/sandspread");
+        GetComponent<AudioSource>().pitch=1.7f;
+        GetComponent<AudioSource>().Play();
+        GameObject sandobj = Resources.Load<GameObject>("Sand");
+        GameObject sand_clone = Instantiate(sandobj, transform.position + new Vector3(0.5f, 0.5f, 0), new Quaternion(-0.707106829f, 0, 0, 0.707106829f));
+        sand_clone.GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSeconds(1);
+        sand_clone.GetComponent<ParticleSystem>().Stop();
+        Destroy(sand_clone, 1);
+        MaterialsChange(PollutionController.instance.mildPM);
+    }
 }

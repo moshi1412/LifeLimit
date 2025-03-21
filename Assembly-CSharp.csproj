@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\AudioController.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
      <Compile Include="Assets\Environment VFX pack\Environment VFX pack\Demo\Scripts\_InputKeyBoard.cs" />
+     <Compile Include="Assets\Scripts\ChooseClass.cs" />
      <None Include="Assets\Environment VFX pack\Environment VFX pack\Demo\Readme.txt" />
      <None Include="Assets\KayKit_City_Builder_Bits_1.0_FREE\KayKit_City_Builder_Bits_1.0_FREE\License.txt" />
      <None Include="Assets\Textures\cubeshader.shader" />

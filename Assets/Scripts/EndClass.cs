@@ -16,6 +16,8 @@ public class EndClass : MonoBehaviour
     {
         if (isEnter && Input.GetMouseButtonDown(0))
         {
+            GetComponent<AudioSource>().clip= Resources.Load<AudioClip>("effect/button");
+            GetComponent<AudioSource>().Play();
             Debug.Log(0);
             if (model == 1)
             {
@@ -44,6 +46,10 @@ public class EndClass : MonoBehaviour
             else if (model == 5)
             {
                 SceneManager.LoadScene(0);
+            }
+            else if (model == 6)
+            {
+                SceneManager.LoadScene(10);
             }
             else
             {
